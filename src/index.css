@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#E3F2FD] min-h-screen font-sans;
+}
+
+.container {
+  @apply px-4 mx-auto max-w-5xl;
+}
+
+.btn {
+  @apply px-6 py-3 font-semibold rounded-full transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-primary {
+  @apply bg-[#1E88E5] text-white hover:bg-[#FF6F61] focus:ring-[#1E88E5] disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-[#FF6F61] text-white hover:bg-[#1E88E5] focus:ring-[#FF6F61];
+}
+
+.card {
+  @apply p-6 bg-[#F5F7FA] rounded-2xl shadow-md hover:shadow-lg transition-shadow; /* Reduced padding for tighter forms */
+}
+
+.form-input {
+  @apply w-full px-4 py-3 border border-[#E3F2FD] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF6F61] text-[#212121] placeholder-[#757575] transition duration-200;
+}
+
+.form-input-error {
+  @apply border-[#E57373] focus:ring-[#E57373]; /* Specific styling for error state */
+}
+
+.form-label {
+  @apply block mb-2 text-sm font-medium text-[#212121];
+}
+
+.form-error {
+  @apply mt-1 text-xs text-[#E57373] font-medium; /* New class for error messages */
+}
+
+.dropzone {
+  @apply border-2 border-dashed border-[#FF6F61] rounded-xl p-6 text-center bg-gradient-to-br from-[#F5F7FA] to-[#E3F2FD] hover:border-[#1E88E5] transition-colors;
+}
+
+.nav-link-primary {
+  @apply relative text-[#212121] font-medium transition-all duration-300 hover:text-[#FF6F61] hover:scale-110 px-2 py-1 rounded-md;
+}
+
+.nav-link-primary::after {
+  @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6F61] transition-all duration-300;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.nav-link-primary:hover::after {
+  @apply w-full;
+}
+
+.nav-link-secondary {
+  @apply text-[#212121] font-medium hover:text-[#FF6F61] px-2 py-1 rounded-md transition-colors;
+}
+
+.footer-link {
+  @apply relative text-[#212121] hover:text-[#FF6F61] transition-all duration-300 hover:scale-105 hover:shadow-sm px-1;
+}
+
+.footer-link::after {
+  @apply absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#FF6F61] transition-all duration-300;
+  content: '';
+  transform: translateX(-50%);
+}
+
+.footer-link:hover::after {
+  @apply w-full;
+}
+
+.social-icon {
+  @apply text-[#212121] hover:text-[#FF6F61] hover:scale-110 transition-all duration-300;
+}
+
+.footer-divider {
+  @apply h-0.5 bg-gradient-to-r from-[#1E88E5] via-[#FF6F61] to-[#1E88E5];
+}
+
+.toast-success {
+  @apply bg-[#4DB6AC] text-[#F5F7FA] rounded-lg shadow-md font-sans animate-fade-in p-4;
+}
+
+.toast-error {
+  @apply bg-[#E57373] text-[#F5F7FA] rounded-lg shadow-md font-sans animate-zoom-in p-4;
+}
+
+.toast-success h3, .toast-error h3 {
+  @apply font-serif text-sm font-bold mb-1;
+}
+
+.toast-success p, .toast-error p {
+  @apply text-xs;
+}
+
+.blog-card {
+  @apply card hover:scale-105 transition-transform duration-300;
+}
+
+.avatar {
+  @apply w-16 h-16 rounded-full object-cover border-2 border-[#E3F2FD];
+}
+
+.avatar-container {
+  @apply flex items-center justify-center w-16 h-16 rounded-full bg-[#E3F2FD] border-2 border-[#FF6F61]; /* New class for avatar placeholder */
+}
+
+.dashboard-table {
+  @apply w-full border-collapse;
+}
+
+.dashboard-table th {
+  @apply bg-[#F5F7FA] text-[#212121] font-semibold py-3 px-4 text-left;
+}
+
+.dashboard-table td {
+  @apply border-t border-[#E3F2FD] py-3 px-4 text-[#212121];
+}
+
+.dashboard-table tr:hover {
+  @apply bg-[#E3F2FD];
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.7s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-zoom-in {
+    animation: zoomIn 0.5s ease-out;
+  }
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-slide-down {
+    animation: slideDown 0.5s ease-out;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
